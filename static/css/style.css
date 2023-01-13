@@ -138,3 +138,12 @@
 	left: 0;
 	z-index: 99;
 }
+
+@media (max-width:480px){
+	.chat-row{
+		display: none!important;
+	}
+	.row{
+		display: block!important;
+	}
+}

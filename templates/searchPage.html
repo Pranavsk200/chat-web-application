@@ -61,7 +61,7 @@
     function createUsers(data){
         console.log(data['data'].length)
         for(i = 0;i <data['data'].length; i++ ){
-            document.querySelector(".chatlist").innerHTML +=`<a href="" style="text-decoration:none; color: inherit;">
+            document.querySelector(".chatlist").innerHTML +=`<a href="/searchResult/${data['data'][i].username}" style="text-decoration:none; color: inherit;">
                 <div class="list">
                     <img src="{% static 'img/user 3.png'%}">
                 <div>

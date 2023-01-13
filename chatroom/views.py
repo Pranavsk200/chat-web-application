@@ -105,6 +105,7 @@ def attrubuteJson(user):
     #     if i.user.username = user.username:
     #         boo = True
     return{
+        "id":str(user.id),
         "username":str(user.username),
         "name":str(user.first_name)+" "+ str(user.last_name),
     }

@@ -15,8 +15,9 @@
 	
 	<div class="container-fluid" id="main-container">
 		<div class="row h-100">
-			<div class="col-12 col-sm-5 col-md-4 d-flex flex-column" id="chat-list-area" style="position:relative;">
-
+			
+			<div class="col-12 col-sm-5 col-md-4 d-flex flex-column chat-row" id="chat-list-area" style="position:relative;">
+				<div class="chat-row">
 				<!-- Navbar -->
 				<div class="row d-flex flex-row align-items-center p-2" id="navbar">
 					<img alt="Profile Photo" class="img-fluid rounded-circle mr-2" style="height:50px; cursor:pointer;" onclick="showProfileSettings()" id="display-pic" src="{% static 'img/user 3.png' %}">
@@ -43,7 +44,7 @@
 						</center>
 					{% endif  %}
 					{% for list in rooms  %}
-					<a href="{% url 'room' list.id %}" style="text-decoration:none; color: inherit; width: 100%;"><div class="chat-list-item d-flex flex-row w-100 p-2 border-bottom active">
+					<a href="{% url 'room' list.id %}" style="text-decoration:none; color: inherit; width: 100%;"><div class="chat-list-item d-flex flex-row w-100 p-2 border-bottom ">
 						<img src="{% static 'img/user 3.png' %}" alt="Profile Photo" class="img-fluid rounded-circle mr-2" style="height:50px;">
 						<div class="w-50">
 							{% for i in list.friends.all %}
@@ -89,7 +90,9 @@
 					</div>
 					
 				</div>
+				</div>
 			</div>
+			
 
 			<!-- Message Area -->
 			<div class="d-none d-sm-flex flex-column col-12 col-sm-7 col-md-8 p-0 h-100" id="message-area">
@@ -126,6 +129,18 @@
 			</div>
 		</div>
 	</div>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+	<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	    crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+	    crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+		crossorigin="anonymous"></script>-->
+	<script src="{% static 'js/datastore.js' %}"></script>
+	<script src="{% static 'js/date-utils.js' %}"></script>
+	<script src="{% static 'js/script.js' %}"></script>
 	<script>
 
 var roomName = {{roomid}};
@@ -241,18 +256,7 @@ var roomName = {{roomid}};
 		
 
 	</script>
-	<script src="{% static 'js/bootstrap.min.js' %}"></script>
-	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
-	<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-	<!--<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-	    crossorigin="anonymous"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
-	    crossorigin="anonymous"></script>
-	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
-		crossorigin="anonymous"></script>-->
-	<script src="{% static 'js/datastore.js' %}"></script>
-	<script src="{% static 'js/date-utils.js' %}"></script>
-	<script src="{% static 'js/script.js' %}"></script>
+	
 </body>
 
 </html>
